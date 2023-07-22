@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FBO</title>
+    <title>Landing Page</title>
     <style>
         html, body {
             height: 100%;
@@ -28,6 +28,17 @@
     </style>
 </head>
 <body>
-    <h1>Attenzione Pickpocket</h1>
+    <h1>Welcome to our Landing Page</h1>
+    <p id="exchangeRate"></p>
+
+    <script>
+        fetch('https://v6.exchangerate-api.com/v6/12498c8a608140cf506a1b99/latest/GBP')
+        .then(response => response.json())
+        .then(data => {
+            const usdRate = data.conversion_rates.USD;
+            document.getElementById('exchangeRate').innerText = `The current exchange rate from GBP to USD is ${usdRate}`;
+        })
+        .catch(error => console.error(error));
+    </script>
 </body>
 </html>
