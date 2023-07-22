@@ -9,6 +9,7 @@
             height: 100%;
             margin: 0;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
@@ -20,15 +21,22 @@
             font-size: 2.5em;
         }
 
+        p {
+            font-size: 1.5em;
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 1.5em;
+            }
+            p {
+                font-size: 1em;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to our Landing Page</h1>
+    <h1>Attenzione Pickpocket</h1>
     <p id="exchangeRate"></p>
 
     <script>
